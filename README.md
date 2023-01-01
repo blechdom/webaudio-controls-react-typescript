@@ -1,4 +1,4 @@
-![webaudio-logo](webaudio-logo-192x192.png)
+![webaudio-logo](./src/stories/assets/webaudio-logo-192x192.png)
 
 - [Go to Storybook](https://blechdom.github.io/webaudio-controls-react-typescript)
 - [Go to Code](https://github.com/blechdom/webaudio-controls-react-typescript)
