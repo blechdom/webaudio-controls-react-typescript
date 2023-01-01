@@ -1,13 +1,13 @@
-import React, { FC, useMemo } from "react";
+import React, { FC, useLayoutEffect, useMemo, useRef } from "react";
 import "./webaudio-controls/webaudio-controls-module";
 import { WebAudioKnobProps } from "./WebAudioKnob.types";
 
 export const WebAudioKnob: FC<WebAudioKnobProps> = (
   props: WebAudioKnobProps
 ) => {
-  const ref = React.useRef(null);
+  const ref = useRef(null);
 
-  React.useLayoutEffect(() => {
+  useLayoutEffect(() => {
     const { current } = ref;
     if (current !== undefined) {
       // @ts-ignore

@@ -20,8 +20,6 @@ const Template: ComponentStory<typeof WebAudioKnob> = (args) => (
 export const Default = Template.bind({});
 
 Default.args = {
-  //argTypes: { onKnobEvent: { action: data } },
-  id: "default-knob",
   src: "",
   value: 0,
   defvalue: 0,

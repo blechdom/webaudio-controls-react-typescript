@@ -1,4 +1,8 @@
 export interface WebAudioSliderProps {
+  ref?: any;
+  id?: string;
+  onSliderInput?: (value: number) => void;
+  onSliderEvent?: (event: any) => void;
   src?: string;
   knobsrc?: string;
   tracking?: "rel" | "abs";

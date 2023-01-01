@@ -5,12 +5,15 @@ import { WebAudioKeyboard } from "../WebAudioKeyboard";
 export default {
   title: "WebAudioKeyboard",
   component: WebAudioKeyboard,
+  control: true,
 } as ComponentMeta<typeof WebAudioKeyboard>;
 
-export const Gallery = () => {
-  return (
-    <>
-      <WebAudioKeyboard />
-    </>
-  );
-};
+const Template: ComponentStory<typeof WebAudioKeyboard> = () => (
+  <>
+    <br />
+    <br />
+    <WebAudioKeyboard />
+  </>
+);
+
+export const Default = Template.bind({});

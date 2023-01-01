@@ -5,7 +5,16 @@ import { WebAudioSlider } from "../WebAudioSlider";
 export default {
   title: "WebAudioSlider",
   component: WebAudioSlider,
+  control: true,
 } as ComponentMeta<typeof WebAudioSlider>;
+
+const Template: ComponentStory<typeof WebAudioSlider> = (args) => (
+  <WebAudioSlider {...args} />
+);
+
+export const Default = Template.bind({});
+
+Default.args = {};
 
 export const Gallery = () => {
   return (
@@ -53,11 +62,3 @@ export const Gallery = () => {
     </>
   );
 };
-
-const Template: ComponentStory<typeof WebAudioSlider> = (args) => (
-  <WebAudioSlider {...args} />
-);
-
-export const Default = Template.bind({});
-
-Default.args = {};
