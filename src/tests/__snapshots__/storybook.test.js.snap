@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots UI/Button Default 1`] = `
+<button
+  className="sc-bcXHqe ihIgfe"
+>
+  Button
+</button>
+`;
+
+exports[`Storyshots UI/Play-Pause Button Default 1`] = `
+<button
+  className="sc-gswNZR hOjULR"
+  onClick={[Function]}
+/>
+`;
+
+exports[`Storyshots UI/Slider Default 1`] = `
+<div
+  className="sc-dkrFOg fAeyUH"
+>
+  <input
+    className="sc-hLBbgP bBmRV"
+    max={100}
+    min={0}
+    step={0.1}
+    type="range"
+  />
+</div>
+`;
+
+exports[`Storyshots UI/Switch Default 1`] = `
+<div
+  className="sc-eDvSVe ipHJcQ"
+>
+  <input
+    className="sc-gKPRtg gDdNJV"
+    id="checkbox"
+    type="checkbox"
+  />
+  <label
+    className="sc-jSUZER iwbgAe"
+    htmlFor="checkbox"
+  />
+</div>
+`;
+
+exports[`Storyshots analyzer/Oscilloscope Default 1`] = `
+[
+  <div>
+    <button
+      className="sc-gswNZR hOjULR"
+      onClick={[Function]}
+    />
+  </div>,
+  <br />,
+  <canvas
+    height={250}
+    width={500}
+  />,
+]
+`;
+
+exports[`Storyshots analyzer/Spectrogram Default 1`] = `
+[
+  <div>
+    <button
+      className="sc-gswNZR hOjULR"
+      onClick={[Function]}
+    />
+  </div>,
+  <br />,
+  <canvas
+    height={250}
+    width={500}
+  />,
+]
+`;
+
+exports[`Storyshots audio/Play-Pause Audio Default 1`] = `
+[
+  <div>
+    <button
+      className="sc-gswNZR hOjULR"
+      onClick={[Function]}
+    />
+  </div>,
+  <br />,
+  <p>
+    Playing: 
+    false
+  </p>,
+  <p>
+    Audio Context State: 
+    suspended
+  </p>,
+]
+`;
