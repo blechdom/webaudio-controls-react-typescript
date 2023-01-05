@@ -11,10 +11,9 @@ export const WebAudioKeyboard: FC<WebAudioKeyboardProps> = (
     const { current } = ref;
     if (current !== undefined) {
       // @ts-ignore
-      current?.addEventListener("input", (event: any) => {
-        props.onKeyboardInput &&
-          props?.onKeyboardInput(parseFloat(event.target.value));
-        props.onKeyboardEvent && props?.onKeyboardEvent(event);
+      current?.addEventListener("change", (event: any) => {
+        props.onKeyboardChangeNote && props?.onKeyboardChangeNote(event.note);
+        props.onKeyboardChangeEvent && props?.onKeyboardChangeEvent(event);
       });
     }
   }, [ref]);

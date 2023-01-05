@@ -1,5 +1,4 @@
 import React, { FC, useLayoutEffect, useMemo, useRef } from "react";
-import "./webaudio-controls/webaudio-controls-module";
 import { WebAudioKnobProps } from "./WebAudioKnob.types";
 
 export const WebAudioKnob: FC<WebAudioKnobProps> = (

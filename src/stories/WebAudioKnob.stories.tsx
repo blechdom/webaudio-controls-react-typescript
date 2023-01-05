@@ -1,7 +1,6 @@
 import React from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { WebAudioKnob } from "../WebAudioKnob";
-import { WebAudioSlider } from "../WebAudioSlider";
 
 export default {
   title: "WebAudioKnob",
@@ -10,11 +9,7 @@ export default {
 } as ComponentMeta<typeof WebAudioKnob>;
 
 const Template: ComponentStory<typeof WebAudioKnob> = (args) => (
-  <>
-    <br />
-    <br />
-    <WebAudioKnob {...args} key={JSON.stringify(args)} />
-  </>
+  <WebAudioKnob {...args} />
 );
 
 export const Default = Template.bind({});
