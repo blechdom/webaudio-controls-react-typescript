@@ -1,14 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { WebAudioKeyboard } from "../WebAudioKeyboard";
-import { WebAudioSwitch } from "../WebAudioSwitch";
 import { WebAudioKnob } from "../WebAudioKnob";
 import { WebAudioParam } from "../WebAudioParam";
 import "../style.css";
 
-const audioCtx: AudioContext = new window.AudioContext();
-const oscillator: OscillatorNode = audioCtx.createOscillator();
-oscillator.type = "sine";
-const gainNode: GainNode = audioCtx.createGain();
+const audioCtx: AudioContext = new AudioContext();
+let oscillator: OscillatorNode | null = null;
+let gainNode: GainNode | null = null;
+function startSine() {
+  oscillator = audioCtx.createOscillator();
+  gainNode = audioCtx.createGain();
+  oscillator.type = "sine";
+  oscillator.connect(gainNode).connect(audioCtx.destination);
+  oscillator.start();
+}
+function stopSine() {
+  oscillator?.stop();
+  oscillator?.disconnect();
+  oscillator = null;
+}
 export default {
   title: "Examples/KeyboardSineWaveDemo",
 };
@@ -19,37 +29,33 @@ export const SineControl = () => {
   const [gate, setGate] = useState<number>(0);
 
   useEffect(() => {
-    oscillator.connect(gainNode).connect(audioCtx.destination);
-    oscillator.start();
+    startSine();
     return () => {
       if (audioCtx.state === "running") {
+        stopSine();
         audioCtx.suspend();
       }
     };
   }, []);
+
   useEffect(() => {
     const convertedFreq = Math.pow(2, (frequency - 69) / 12) * 440;
-    oscillator.frequency.setValueAtTime(convertedFreq, audioCtx.currentTime);
+    oscillator?.frequency.setValueAtTime(convertedFreq, audioCtx.currentTime);
   }, [frequency]);
 
   useEffect(() => {
-    gainNode.gain.setValueAtTime(gain * gate, audioCtx.currentTime);
+    if (audioCtx.state !== "running") {
+      audioCtx.resume();
+    }
+    gainNode?.gain.setValueAtTime(gain * gate, audioCtx.currentTime);
   }, [gain, gate]);
 
-  async function toggleAudioContext(audioState: boolean) {
-    if (audioCtx.state === "running") {
-      await audioCtx.suspend();
-    } else {
-      await audioCtx.resume();
-    }
-  }
   function updateNote(note: [number, number]) {
     setFrequency(note[1]);
     setGate(note[0]);
   }
   return (
     <div className="flex-controls">
-      <WebAudioSwitch diameter={150} onSwitchChange={toggleAudioContext} />
       <WebAudioKnob
         id="knob"
         value={gain}
