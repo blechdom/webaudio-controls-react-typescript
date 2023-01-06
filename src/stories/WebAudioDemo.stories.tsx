@@ -21,6 +21,13 @@ export const SineControl = () => {
   const [gate, setGate] = useState<number>(0);
 
   useEffect(() => {
+    return () => {
+      if (audioCtx.state === "running") {
+        audioCtx.suspend();
+      }
+    };
+  }, []);
+  useEffect(() => {
     const convertedFreq = Math.pow(2, (frequency - 69) / 12) * 440;
     oscillator.frequency.setValueAtTime(convertedFreq, audioCtx.currentTime);
   }, [frequency]);
