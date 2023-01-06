@@ -1,98 +1,513 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots UI/Button Default 1`] = `
-<button
-  className="sc-bcXHqe ihIgfe"
->
-  Button
-</button>
-`;
-
-exports[`Storyshots UI/Play-Pause Button Default 1`] = `
-<button
-  className="sc-gswNZR hOjULR"
-  onClick={[Function]}
+exports[`Storyshots WebAudioKeyboard Crazy Colors 1`] = `
+<webaudio-keyboard
+  colors="#ff0000;#DEFF00;#00ff00;#0061FF;#00E7FF;#FF7A00;#0000ff;#FF86F1;#FF00C9"
+  height={200}
+  id="keyboard"
+  keys={32}
+  width={800}
 />
 `;
 
-exports[`Storyshots UI/Slider Default 1`] = `
-<div
-  className="sc-dkrFOg fAeyUH"
->
-  <input
-    className="sc-hLBbgP bBmRV"
-    max={100}
-    min={0}
-    step={0.1}
-    type="range"
-  />
-</div>
+exports[`Storyshots WebAudioKeyboard Default 1`] = `
+<webaudio-keyboard
+  id="keyboard"
+/>
 `;
 
-exports[`Storyshots UI/Switch Default 1`] = `
-<div
-  className="sc-eDvSVe ipHJcQ"
->
-  <input
-    className="sc-gKPRtg gDdNJV"
-    id="checkbox"
-    type="checkbox"
-  />
-  <label
-    className="sc-jSUZER iwbgAe"
-    htmlFor="checkbox"
-  />
-</div>
+exports[`Storyshots WebAudioKeyboard Eighty Eight 1`] = `
+<webaudio-keyboard
+  height={60}
+  id="keyboard"
+  keys={88}
+  width={800}
+/>
 `;
 
-exports[`Storyshots analyzer/Oscilloscope Default 1`] = `
+exports[`Storyshots WebAudioKnob Default 1`] = `
+<webaudio-knob
+  bodyColor="#000"
+  colors="#e00;#000;#fff;"
+  conv={null}
+  defvalue={0}
+  diameter={200}
+  enable={1}
+  height={null}
+  highlightColor="#fff"
+  id="knob"
+  indicatorColor="#e00"
+  log={0}
+  max={100}
+  midicc={null}
+  midilearn={0}
+  min={0}
+  outline={0}
+  sensitivity={1}
+  sprites={null}
+  src=""
+  step={1}
+  tooltip="tooltip text"
+  value={0}
+  valuetip={1}
+  width={null}
+/>
+`;
+
+exports[`Storyshots WebAudioKnob Gallery 1`] = `
 [
-  <div>
-    <button
-      className="sc-gswNZR hOjULR"
-      onClick={[Function]}
-    />
-  </div>,
-  <br />,
-  <canvas
-    height={250}
-    width={500}
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/Aqua.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/Carbon.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/Chromed.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/Jambalaya.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/JP8000.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/lineshadow2.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/LittlePhatty.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/m400.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/MiniMoog_Main.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/nice_lamp_knob.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/plastic_knob.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/simpleBlue.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/SimpleFlat3.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/simplegray.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/vernier.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/Vintage_Knob.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    sprites={127}
+    src="./images/yellow.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/golfBallKnob.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/golfBallKnobLight.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/golfBallKnobLightPan.png"
+    value={50}
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    src="./images/lineshadow.png"
+  />,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    sprites={127}
+    src="./images/WOK_vintage_AbbeyRoad_PAN_Knob.png"
+    value={50}
   />,
 ]
 `;
 
-exports[`Storyshots analyzer/Spectrogram Default 1`] = `
+exports[`Storyshots WebAudioKnob Image Sliders 1`] = `
 [
-  <div>
-    <button
-      className="sc-gswNZR hOjULR"
-      onClick={[Function]}
-    />
-  </div>,
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    sprites={60}
+    src="./images/slider.png"
+  />,
+  ";",
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    sprites={52}
+    src="./images/golfBallSliderRed.png"
+  />,
+  ";",
+  <webaudio-knob
+    colors="undefined;undefined;undefined;"
+    id="knob"
+    sprites={4}
+    src="./images/golfBallSlider.png"
+  />,
+  ";",
+]
+`;
+
+exports[`Storyshots WebAudioParam Gallery 1`] = `<webaudio-param />`;
+
+exports[`Storyshots WebAudioParam Linked 1`] = `
+[
+  <webaudio-knob
+    bodyColor="#000"
+    colors="#e00;#000;#fff;"
+    diameter={100}
+    highlightColor="#fff"
+    id="knob"
+    indicatorColor="#e00"
+  />,
   <br />,
-  <canvas
-    height={250}
-    width={500}
+  <br />,
+  <webaudio-param
+    colors="#000;#FF0000"
+    fontsize={50}
+    height={50}
+    link="knob"
+    outline="3px solid #000"
+    width={100}
   />,
 ]
 `;
 
-exports[`Storyshots audio/Play-Pause Audio Default 1`] = `
+exports[`Storyshots WebAudioSlider Default 1`] = `
+<webaudio-slider
+  id="slider"
+/>
+`;
+
+exports[`Storyshots WebAudioSlider Gallery 1`] = `
 [
+  <webaudio-slider
+    id="slider"
+  />,
+  <webaudio-slider
+    id="slider"
+    knobsrc="./images/hsliderknob.png"
+    src="./images/hsliderbody.png"
+    tracking="rel"
+  />,
+  <br />,
+  <webaudio-slider
+    id="slider"
+    knobsrc="./images/vsliderknob.png"
+    src="./images/vsliderbody.png"
+    tracking="rel"
+  />,
+  <br />,
+  <br />,
   <div>
-    <button
-      className="sc-gswNZR hOjULR"
-      onClick={[Function]}
+    <webaudio-slider
+      height={50}
+      id="slider"
+      knobsrc="./images/golfball-75.png"
+      width={500}
     />
   </div>,
   <br />,
-  <p>
-    Playing: 
-    false
-  </p>,
-  <p>
-    Audio Context State: 
-    suspended
-  </p>,
+  <br />,
+  <div>
+    <webaudio-slider
+      height={56}
+      id="slider"
+      knobsrc="./images/golfball-50.png"
+      width={500}
+    />
+  </div>,
+  <br />,
+  <br />,
+  <div>
+    <webaudio-slider
+      colors="#000000;#00ff00;#00ffff"
+      height={300}
+      id="slider"
+      knobsrc="./images/golfball-50.png"
+      width={24}
+    />
+  </div>,
+]
+`;
+
+exports[`Storyshots WebAudioSwitch Default 1`] = `
+[
+  <webaudio-switch
+    id="sw-toggle"
+  />,
+  <br />,
+  <br />,
+  <webaudio-switch
+    id="sw-kick"
+    type="kick"
+  />,
+  <br />,
+  <br />,
+  <webaudio-switch
+    group="1"
+    id="sw-radio-1"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="1"
+    id="sw-radio-2"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="1"
+    id="sw-radio-3"
+    type="radio"
+  />,
+]
+`;
+
+exports[`Storyshots WebAudioSwitch Kick Gallery 1`] = `
+[
+  <webaudio-switch
+    id="switch"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/redbutton128.png"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/green_button.png"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/prophet5_button.png"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/golfBallButton.png"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/switch_press.png"
+    type="kick"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/golfBallSwitchBW.png"
+    type="kick"
+  />,
+]
+`;
+
+exports[`Storyshots WebAudioSwitch Radio Gallery 1`] = `
+[
+  <webaudio-switch
+    group="storybook"
+    id="default-sw1"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw2"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw3"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw4"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw5"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw6"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook"
+    id="default-sw7"
+    type="radio"
+  />,
+  <br />,
+  <br />,
+  <webaudio-switch
+    group="storybook2"
+    id="green-sw1"
+    src="./images/green_button.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook2"
+    id="green-sw2"
+    src="./images/green_button.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook2"
+    id="green-sw3"
+    src="./images/green_button.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook2"
+    id="green-sw4"
+    src="./images/green_button.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook2"
+    id="green-sw5"
+    src="./images/green_button.png"
+    type="radio"
+  />,
+  <br />,
+  <br />,
+  <webaudio-switch
+    group="storybook3"
+    id="golf-sw1"
+    src="./images/golfBallSwitchBW.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook3"
+    id="golf-sw2"
+    src="./images/golfBallSwitchBW.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook3"
+    id="golf-sw3"
+    src="./images/golfBallSwitchBW.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook3"
+    id="golf-sw4"
+    src="./images/golfBallSwitchBW.png"
+    type="radio"
+  />,
+  <webaudio-switch
+    group="storybook3"
+    id="golf-sw5"
+    src="./images/golfBallSwitchBW.png"
+    type="radio"
+  />,
+]
+`;
+
+exports[`Storyshots WebAudioSwitch Toggle Gallery 1`] = `
+[
+  <webaudio-switch
+    id="switch"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/switch_toggle.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/redbutton128.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/green_button.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/power_switch.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/prophet5_button.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/solo.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/stainless_switch.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/switch_mode.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/switch_slide.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/golfBallButton.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/switch_press.png"
+  />,
+  <webaudio-switch
+    id="switch"
+    src="./images/golfBallSwitchBW.png"
+  />,
 ]
 `;

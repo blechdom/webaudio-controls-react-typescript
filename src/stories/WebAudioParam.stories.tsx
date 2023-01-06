@@ -34,6 +34,7 @@ export const Linked = () => {
         fontsize={50}
         link="knob"
         colors={"#000;#FF0000"}
+        outline="3px solid #000"
       />
     </>
   );

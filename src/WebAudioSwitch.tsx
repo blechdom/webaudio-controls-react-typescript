@@ -1,4 +1,5 @@
-import React, { FC, useLayoutEffect, useMemo, useRef } from "react";
+import React, { FC, useLayoutEffect, useRef } from "react";
+import "./webaudio-controls/webaudio-controls-module";
 import { WebAudioSwitchProps } from "./WebAudioSwitch.types";
 
 export const WebAudioSwitch: FC<WebAudioSwitchProps> = (
