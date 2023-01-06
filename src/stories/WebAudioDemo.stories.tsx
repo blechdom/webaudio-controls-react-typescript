@@ -9,8 +9,6 @@ const audioCtx: AudioContext = new window.AudioContext();
 const oscillator: OscillatorNode = audioCtx.createOscillator();
 oscillator.type = "sine";
 const gainNode: GainNode = audioCtx.createGain();
-oscillator.connect(gainNode).connect(audioCtx.destination);
-oscillator.start();
 export default {
   title: "Examples/KeyboardSineWaveDemo",
 };
@@ -21,6 +19,8 @@ export const SineControl = () => {
   const [gate, setGate] = useState<number>(0);
 
   useEffect(() => {
+    oscillator.connect(gainNode).connect(audioCtx.destination);
+    oscillator.start();
     return () => {
       if (audioCtx.state === "running") {
         audioCtx.suspend();
