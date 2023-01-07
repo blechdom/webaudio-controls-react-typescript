@@ -89,6 +89,9 @@ export const Controlled: FC = () => {
   return (
     <>
       <input
+        type={"number"}
+        min={0}
+        max={100}
         value={knobValue}
         onChange={(event) => setKnobValue(parseFloat(event.target.value))}
       />
@@ -98,6 +101,7 @@ export const Controlled: FC = () => {
         bodyColor="#000"
         highlightColor="#fff"
         indicatorColor="#e00"
+        defvalue={0}
         value={knobValue}
         onKnobEvent={(event) => setKnobValue(parseFloat(event.target.value))}
       />
