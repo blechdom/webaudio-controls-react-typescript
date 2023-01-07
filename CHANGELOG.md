@@ -1,3 +1,15 @@
+# v0.0.8 (Sat Jan 07 2023)
+
+#### ⚠️ Pushed to `main`
+
+- add real-time value redraw to web components ([@blechdom](https://github.com/blechdom))
+
+#### Authors: 1
+
+- Kristin Galvin ([@blechdom](https://github.com/blechdom))
+
+---
+
 # v0.0.7 (Fri Jan 06 2023)
 
 #### ⚠️ Pushed to `main`
