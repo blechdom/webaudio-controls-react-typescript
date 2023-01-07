@@ -1,4 +1,4 @@
-import React from "react";
+import React, { FC, useEffect, useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { WebAudioKnob } from "../WebAudioKnob";
 
@@ -79,6 +79,29 @@ export const ImageSliders = () => {
       <WebAudioKnob src={"./images/golfBallSliderRed.png"} sprites={52} />
       ;
       <WebAudioKnob src={"./images/golfBallSlider.png"} sprites={4} />;
+    </>
+  );
+};
+
+export const Controlled: FC = () => {
+  const [knobValue, setKnobValue] = useState<number>(0);
+
+  return (
+    <>
+      <input
+        value={knobValue}
+        onChange={(event) => setKnobValue(parseFloat(event.target.value))}
+      />
+      <br />
+      <br />
+      <WebAudioKnob
+        bodyColor="#000"
+        highlightColor="#fff"
+        indicatorColor="#e00"
+        value={knobValue}
+        onKnobEvent={(event) => setKnobValue(parseFloat(event.target.value))}
+      />
+      ;
     </>
   );
 };

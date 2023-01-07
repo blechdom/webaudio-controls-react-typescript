@@ -489,6 +489,10 @@ export class WebAudioKnob extends WebAudioControlsWidget {
   constructor() {
     super();
   }
+
+  static get observedAttributes() {
+    return ["value"];
+  }
   connectedCallback() {
     let root;
     if (this.attachShadow) root = this.attachShadow({ mode: "open" });
@@ -669,6 +673,14 @@ export class WebAudioKnob extends WebAudioControlsWidget {
       window.webAudioControlsWidgetManager.addWidget(this);
   }
   disconnectedCallback() {}
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "value") {
+      if (this._value != newValue) {
+        this._setValue(newValue);
+      }
+    }
+  }
   setupImage() {
     this.kw =
       this._width || this._diameter || opt.knobWidth || opt.knobDiameter;
@@ -944,6 +956,10 @@ export class WebAudioSlider extends WebAudioControlsWidget {
   constructor() {
     super();
   }
+
+  static get observedAttributes() {
+    return ["value"];
+  }
   connectedCallback() {
     let root;
     if (this.attachShadow) root = this.attachShadow({ mode: "open" });
@@ -1176,6 +1192,13 @@ ${this.basestyle}
     };
   }
   disconnectedCallback() {}
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "value") {
+      if (this._value != newValue) {
+        this._setValue(newValue);
+      }
+    }
+  }
   setupImage() {
     this.coltab = this.colors.split(";");
     this.bodyimg = new Image();
@@ -1536,6 +1559,9 @@ export class WebAudioSwitch extends WebAudioControlsWidget {
   constructor() {
     super();
   }
+  static get observedAttributes() {
+    return ["value"];
+  }
   connectedCallback() {
     let root;
     if (this.attachShadow) root = this.attachShadow({ mode: "open" });
@@ -1678,6 +1704,15 @@ ${this.basestyle}
     };
   }
   disconnectedCallback() {}
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "value") {
+      if (this._value != newValue) {
+        this._setValue(newValue);
+      }
+    }
+  }
+
   setupImage() {
     this.coltab = this.colors.split(";");
     this.kw =
@@ -1869,6 +1904,9 @@ export class WebAudioParam extends WebAudioControlsWidget {
     this.addEventListener("mouseout", this.pointerout);
     this.addEventListener("contextmenu", this.contextMenu);
   }
+  static get observedAttributes() {
+    return ["value"];
+  }
   connectedCallback() {
     let root;
     if (this.attachShadow) root = this.attachShadow({ mode: "open" });
@@ -2003,6 +2041,13 @@ ${this.basestyle}
     };
   }
   disconnectedCallback() {}
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "value") {
+      if (this._value != newValue) {
+        this._setValue(newValue);
+      }
+    }
+  }
   setupImage() {
     this.imgloaded = () => {
       if (this.src != "" && this.src != null) {

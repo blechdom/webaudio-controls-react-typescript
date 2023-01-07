@@ -1,10 +1,6 @@
-import { ForwardedRef } from "react";
-
 export interface WebAudioKnobProps {
   ref?: any;
   id?: string;
-  onKnobInput?: (value: number) => void;
-  onKnobEvent?: (event: any) => void;
   src?: string | null;
   value?: number;
   colors?: string;
@@ -28,4 +24,6 @@ export interface WebAudioKnobProps {
   outline?: 0 | 1 | string; // 0, 1, 1px border #000
   midilearn?: 0 | 1;
   midicc?: string | null;
+  onKnobInput?: (value: number) => void;
+  onKnobEvent?: (event: any) => void;
 }
