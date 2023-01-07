@@ -1,3 +1,16 @@
+# v0.0.9 (Sat Jan 07 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/blechdom/webaudio-controls-react-typescript ([@blechdom](https://github.com/blechdom))
+- fix webcomponents value bug ([@blechdom](https://github.com/blechdom))
+
+#### Authors: 1
+
+- Kristin Galvin ([@blechdom](https://github.com/blechdom))
+
+---
+
 # v0.0.8 (Sat Jan 07 2023)
 
 #### ⚠️ Pushed to `main`
