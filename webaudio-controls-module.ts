@@ -673,9 +673,9 @@ export class WebAudioKnob extends WebAudioControlsWidget {
       window.webAudioControlsWidgetManager.addWidget(this);
   }
   disconnectedCallback() {}
-
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
+      if (!this._value) this._value = newValue;
       if (this._value != newValue) {
         this._setValue(newValue);
       }
@@ -956,7 +956,6 @@ export class WebAudioSlider extends WebAudioControlsWidget {
   constructor() {
     super();
   }
-
   static get observedAttributes() {
     return ["value"];
   }
@@ -1194,6 +1193,7 @@ ${this.basestyle}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
+      if (!this._value) this._value = newValue;
       if (this._value != newValue) {
         this._setValue(newValue);
       }
@@ -1704,15 +1704,14 @@ ${this.basestyle}
     };
   }
   disconnectedCallback() {}
-
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
+      if (!this._value) this._value = newValue;
       if (this._value != newValue) {
         this._setValue(newValue);
       }
     }
   }
-
   setupImage() {
     this.coltab = this.colors.split(";");
     this.kw =
@@ -2043,6 +2042,7 @@ ${this.basestyle}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
+      if (!this._value) this._value = newValue;
       if (this._value != newValue) {
         this._setValue(newValue);
       }
