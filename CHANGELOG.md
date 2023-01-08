@@ -1,3 +1,15 @@
+# v0.0.10 (Sun Jan 08 2023)
+
+#### ⚠️ Pushed to `main`
+
+- fix webAudioParam input ([@blechdom](https://github.com/blechdom))
+
+#### Authors: 1
+
+- Kristin Galvin ([@blechdom](https://github.com/blechdom))
+
+---
+
 # v0.0.9 (Sat Jan 07 2023)
 
 #### ⚠️ Pushed to `main`
