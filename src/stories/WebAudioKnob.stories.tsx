@@ -105,7 +105,6 @@ export const Controlled: FC = () => {
         value={knobValue}
         onKnobEvent={(event) => setKnobValue(parseFloat(event.target.value))}
       />
-      ;
     </>
   );
 };

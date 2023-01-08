@@ -357,32 +357,34 @@ export class WebAudioControlsWidget extends HTMLElement {
       return r;
     }
     let s = this.tooltip;
-    if (this.drag || this.hover) {
-      if (this.valuetip) {
-        if (s == null) s = `%s`;
-        else if (s.indexOf("%") < 0) s += ` : %s`;
+    if (this && this.ttframe) {
+      if (this.drag || this.hover) {
+        if (this.valuetip) {
+          if (s == null) s = `%s`;
+          else if (s.indexOf("%") < 0) s += ` : %s`;
+        }
+        if (s) {
+          this.ttframe.innerHTML = numformat(s, this.convValue);
+          this.ttframe.style.display = "inline-block";
+          this.ttframe.style.width = "auto";
+          this.ttframe.style.height = "auto";
+          this.ttframe.style.transition =
+            "opacity 0.5s " + d + "s,visibility 0.5s " + d + "s";
+          this.ttframe.style.opacity = 0.9;
+          this.ttframe.style.visibility = "visible";
+          let rc = this.getBoundingClientRect(),
+            rc2 = this.ttframe.getBoundingClientRect(),
+            rc3 = document.documentElement.getBoundingClientRect();
+          this.ttframe.style.left = (rc.width - rc2.width) * 0.5 + 1000 + "px";
+          this.ttframe.style.top = -rc2.height - 8 + "px";
+          return;
+        }
       }
-      if (s) {
-        this.ttframe.innerHTML = numformat(s, this.convValue);
-        this.ttframe.style.display = "inline-block";
-        this.ttframe.style.width = "auto";
-        this.ttframe.style.height = "auto";
-        this.ttframe.style.transition =
-          "opacity 0.5s " + d + "s,visibility 0.5s " + d + "s";
-        this.ttframe.style.opacity = 0.9;
-        this.ttframe.style.visibility = "visible";
-        let rc = this.getBoundingClientRect(),
-          rc2 = this.ttframe.getBoundingClientRect(),
-          rc3 = document.documentElement.getBoundingClientRect();
-        this.ttframe.style.left = (rc.width - rc2.width) * 0.5 + 1000 + "px";
-        this.ttframe.style.top = -rc2.height - 8 + "px";
-        return;
-      }
+      this.ttframe.style.transition =
+        "opacity 0.1s " + d + "s,visibility 0.1s " + d + "s";
+      this.ttframe.style.opacity = 0;
+      this.ttframe.style.visibility = "hidden";
     }
-    this.ttframe.style.transition =
-      "opacity 0.1s " + d + "s,visibility 0.1s " + d + "s";
-    this.ttframe.style.opacity = 0;
-    this.ttframe.style.visibility = "hidden";
   }
   setupLabel() {
     this.labelpos = this.getAttr("labelpos", "bottom 0px");
@@ -675,9 +677,9 @@ export class WebAudioKnob extends WebAudioControlsWidget {
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
-      if (!this._value) this._value = newValue;
-      if (this._value != newValue) {
-        this._setValue(newValue);
+      if (this._value !== newValue) {
+        if (!this._value) this._value = newValue;
+        this.setValue(newValue);
       }
     }
   }
@@ -767,16 +769,18 @@ export class WebAudioKnob extends WebAudioControlsWidget {
     if (this.log)
       ratio = Math.log(this.value / this.min) / Math.log(this.max / this.min);
     else ratio = (this.value - this.min) / (this.max - this.min);
-    let style = this.elem.style;
-    let sp = this.src ? this.sprites : 100;
-    if (sp >= 1) {
-      let offset = (sp * ratio) | 0;
-      style.backgroundPosition = "0px " + -offset * this.kh + "px";
-      style.transform = "rotate(0deg)";
-    } else {
-      let deg = 270 * (ratio - 0.5);
-      style.backgroundPosition = "0px 0px";
-      style.transform = "rotate(" + deg + "deg)";
+    if (this && this.elem && this.elem.style) {
+      let style = this.elem.style;
+      let sp = this.src ? this.sprites : 100;
+      if (sp >= 1) {
+        let offset = (sp * ratio) | 0;
+        style.backgroundPosition = "0px " + -offset * this.kh + "px";
+        style.transform = "rotate(0deg)";
+      } else {
+        let deg = 270 * (ratio - 0.5);
+        style.backgroundPosition = "0px 0px";
+        style.transform = "rotate(" + deg + "deg)";
+      }
     }
   }
   _setValue(v) {
@@ -806,7 +810,7 @@ export class WebAudioKnob extends WebAudioControlsWidget {
       this.sendEvent("input"), this.sendEvent("change");
   }
   keydown(e) {
-    const delta = this.step;
+    let delta = this.step;
     if (delta == 0) delta = 1;
     switch (e.key) {
       case "ArrowUp":
@@ -1378,7 +1382,7 @@ ${this.basestyle}
       this.sendEvent("input"), this.sendEvent("change");
   }
   keydown(e) {
-    const delta = this.step;
+    let delta = this.step;
     if (delta == 0) delta = 1;
     switch (e.key) {
       case "ArrowUp":
@@ -1891,17 +1895,6 @@ try {
 export class WebAudioParam extends WebAudioControlsWidget {
   constructor() {
     super();
-    this.addEventListener("keydown", this.keydown);
-    this.addEventListener("mousedown", this.pointerdown, {
-      passive: false,
-    });
-    this.addEventListener("touchstart", this.pointerdown, {
-      passive: false,
-    });
-    this.addEventListener("wheel", this.wheel);
-    this.addEventListener("mouseover", this.pointerover);
-    this.addEventListener("mouseout", this.pointerout);
-    this.addEventListener("contextmenu", this.contextMenu);
   }
   static get observedAttributes() {
     return ["value"];
@@ -1936,7 +1929,7 @@ ${this.basestyle}
   border:none;
 }
 </style>
-<input class='webaudio-param-body' value='0' tabindex='1' touch-action='none'/><div class='webaudioctrl-tooltip'></div>
+<input class='webaudio-param-body' value='0' touch-action='none'/><div class='webaudioctrl-tooltip'></div>
 `;
     this.elem = root.childNodes[2];
     this.ttframe = root.childNodes[3];
@@ -2018,15 +2011,14 @@ ${this.basestyle}
     }
     this.setupImage();
     if (window.webAudioControlsWidgetManager)
-      //        window.webAudioControlsWidgetManager.updateWidgets();
       window.webAudioControlsWidgetManager.addWidget(this);
     this.fromLink = ((e) => {
       this.setValue(e.target.convValue.toFixed(e.target.digits));
     }).bind(this);
     this.elem.onchange = () => {
       if (
-        !this.currentLink.target.conv ||
-        (this.currentLink.target.conv && this.rconv)
+        !this.currentLink?.target.conv ||
+        (this.currentLink?.target.conv && this.rconv)
       ) {
         let val = (this.value = this.elem.value);
         if (this.rconv) {
@@ -2036,15 +2028,16 @@ ${this.basestyle}
         if (this.currentLink) {
           this.currentLink.target.setValue(val, true);
         }
+        this.setValue(val, true);
       }
     };
   }
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
-      if (!this._value) this._value = newValue;
-      if (this._value != newValue) {
-        this._setValue(newValue);
+      if (this._value !== newValue) {
+        if (!this._value) this._value = newValue;
+        this.setValue(newValue);
       }
     }
   }
@@ -2100,7 +2093,8 @@ ${this.basestyle}
     }
   }
   redraw() {
-    this.elem.value = this.value;
+    if (this && this.elem && this.elem.value && this.value)
+      this.elem.value = this.value;
   }
   setValue(v, f) {
     this.value = v;
@@ -2250,6 +2244,7 @@ ${this.basestyle}
       window.webAudioControlsWidgetManager.addWidget(this);
   }
   disconnectedCallback() {}
+
   setupImage() {
     this.cv.style.width = this.width + "px";
     this.cv.style.height = this.height + "px";
