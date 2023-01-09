@@ -1,6 +1,7 @@
-import React from "react";
+import React, { FC, useState } from "react";
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { WebAudioSwitch } from "../WebAudioSwitch";
+import { WebAudioKnob } from "../WebAudioKnob";
 
 export default {
   title: "WebAudioSwitch",
@@ -133,6 +134,23 @@ export const RadioGallery = () => {
         type="radio"
         group="storybook3"
       />
+    </>
+  );
+};
+
+export const Controlled: FC = () => {
+  const [switchValue, setSwitchValue] = useState<0 | 1>(0);
+
+  return (
+    <>
+      <input
+        type="checkbox"
+        checked={switchValue === 1 ? true : false}
+        onChange={(event) => setSwitchValue(event.target.checked ? 1 : 0)}
+      />
+      <br />
+      <br />
+      <WebAudioSwitch value={switchValue} onSwitchClick={setSwitchValue} />
     </>
   );
 };
