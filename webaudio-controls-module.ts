@@ -1710,9 +1710,9 @@ ${this.basestyle}
   disconnectedCallback() {}
   attributeChangedCallback(name, oldValue, newValue) {
     if (name === "value") {
-      if (!this._value) this._value = newValue;
-      if (this._value != newValue) {
-        this._setValue(newValue);
+      if (this._value !== newValue) {
+        if (!this._value) this._value = newValue;
+        this.setValue(newValue);
       }
     }
   }
