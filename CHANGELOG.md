@@ -1,3 +1,16 @@
+# v0.0.11 (Mon Jan 09 2023)
+
+#### ⚠️ Pushed to `main`
+
+- Merge branch 'main' of https://github.com/blechdom/webaudio-controls-react-typescript ([@blechdom](https://github.com/blechdom))
+- add controlled settings for webAudioSwitch ([@blechdom](https://github.com/blechdom))
+
+#### Authors: 1
+
+- Kristin Galvin ([@blechdom](https://github.com/blechdom))
+
+---
+
 # v0.0.10 (Sun Jan 08 2023)
 
 #### ⚠️ Pushed to `main`
