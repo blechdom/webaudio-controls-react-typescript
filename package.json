@@ -1,6 +1,6 @@
 {
   "name": "webaudio-controls-react-typescript",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "homepage": "https://blechdom.github.io/webaudio-controls-react-typescript/",
   "description": "![webaudio-logo](./src/stories/assets/webaudio-logo-192x192.png)",
   "main": "dist/cjs/index.js",
